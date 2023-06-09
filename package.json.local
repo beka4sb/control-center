@@ -1,0 +1,38 @@
+{
+  "name": "react-modules",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx webpack serve --config webpack.dev.js",
+    "start-test": "npx webpack serve --config webpack.test.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest --config jest.config.json",
+    "dev": "nodemon -e js,jsx,json,ts,tsx --watch src --exec \"yarn build:wc\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prettier": "prettier -c --write \"{src,tests}/**/*.{tsx,ts}\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  }
+}

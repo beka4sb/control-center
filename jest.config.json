@@ -1,0 +1,21 @@
+{
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.svg$": "jest-transformer-svg",
+    "^.+\\.css$": "jest-transform-stub"
+  },
+  "roots": ["<rootDir>/tests"],
+  "collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts", "!src/**/*.stories.tsx"],
+  "setupFiles": ["react-app-polyfill/jsdom"],
+  "setupFilesAfterEnv": ["<rootDir>/tests/setupTests.ts"],
+  "testMatch": ["<rootDir>/tests/**/__tests__/**/*.{js,jsx,ts,tsx}", "<rootDir>/tests/**/*.{spec,test}.{js,jsx,ts,tsx}"],
+  "testEnvironment": "jsdom",
+  "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$"],
+  "modulePaths": [],
+  "moduleNameMapper": {
+    "^react-native$": "react-native-web",
+    "axios": ["axios/dist/node/axios.cjs", "axios"]
+  },
+  "moduleFileExtensions": ["web.js", "js", "web.ts", "ts", "web.tsx", "tsx", "json", "web.jsx", "jsx", "node"],
+  "resetMocks": true
+}

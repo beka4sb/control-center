@@ -1,0 +1,17 @@
+site_name: Control Center
+docs_dir: docs
+edit_uri: edit/main/saq/pqc/control-center/docs
+
+nav:
+  - Introduction: intro.md
+  - Onboarding: onboarding.md
+  - Development Guidelines:
+    - Feature Development Process: development-guidelines/feature-development-process.md
+    - Running a Bug Bash: development-guidelines/running-a-bug-bash.md
+    - Feature Flags: development-guidelines/feature-flags.md
+    - General Guidelines: development-guidelines/general-guidelines.md
+  - Technical Documentation:
+    - Intro: technical-documentation/intro.md
+    - Foundation: technical-documentation/foundation.md
+    - Authentication: technical-documentation/authentication.md
+    - Data Grid: technical-documentation/data-grid.md

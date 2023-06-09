@@ -1,0 +1,33 @@
+load("//saq/pqc/control-center/cypress:BUILD.bzl", "e2e_test")
+load("@bazel_skylib//lib:paths.bzl", "paths")
+load("@npm//:cypress/package_json.bzl", cypress = "bin")
+
+cypress.cypress_binary(
+    name = "cypress",
+    args = ["run"],
+    chdir = package_name(),
+    data = [
+        "//:node_modules/cypress",
+        "//:node_modules/cypress-fail-on-console-error",
+        "//:node_modules/cypress-multi-reporters",
+        "//:node_modules/type-detect",
+    ],
+)
+
+# TODO: restore cypress tests when fixed
+# [
+#     e2e_test(
+#         name = paths.replace_extension(src, ""),
+#         timeout = "long",  # 15 minutes, FIXME(tim.jaeger@): why is this taking so long?
+#         srcs = [src] + glob([
+#             "support/**",
+#             "fixtures/**",
+#             "utils/**",
+#         ]),
+#         tags = [
+#             "exclusive",
+#             "no-sandbox",  # EPERM: operation not permitted, open '/Users/tim.jaeger/Library/Application Support/Cypress/cy/production/cache'
+#         ],
+#     )
+#     for src in glob(["e2e/**/*.cy.ts"])
+# ]
